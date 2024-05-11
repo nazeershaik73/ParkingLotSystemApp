@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Slot {
     String type;
@@ -25,6 +26,18 @@ public class Slot {
     }
     public void setTicketId(String ticketId) {
         this.ticketId = ticketId;
+    }
+
+    public Slot findAlternateSlot(List<List<Slot>> slots){
+        for(int i=0;i<slots.size();i++){
+            for(int j=0;j<slots.get(i).size();j++){
+                Slot currenSlot =slots.get(i).get(j);
+                if(currenSlot.vehicle == null){
+                    return currenSlot;
+                }
+            }
+        }
+        return null;
     }
      
 }

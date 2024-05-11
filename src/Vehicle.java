@@ -1,4 +1,4 @@
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Vehicle {
@@ -6,15 +6,15 @@ public class Vehicle {
     String type;
     String registration;
     String color;
-    String entryTime;
+    String entryTimeDate;
     public Vehicle(String type, String registration, String color) {
         this.type = type;
         this.registration = registration;
         this.color = color;
-        LocalTime eTime = LocalTime.now();
-        DateTimeFormatter timeFormatter=DateTimeFormatter.ofPattern("HH:mm:ss");
-        String entryTime=timeFormatter.format(eTime);
-        this.entryTime=entryTime;
+        LocalDateTime eDateTime = LocalDateTime.now();
+        DateTimeFormatter timeFormatter=DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy");
+        String entryTimeDate=timeFormatter.format(eDateTime);
+        this.entryTimeDate=entryTimeDate;
     }
     
     public Vehicle() {
@@ -22,13 +22,13 @@ public class Vehicle {
     }
 
     //method to get entry time
-    public String getEntryTime() {
-        return entryTime;
+    public String getEntryTimeDate() {
+        return entryTimeDate;
     }
 
     //method to set entry time if needed
-    public void setEntryTime(String entryTime) {
-        this.entryTime = entryTime;
+    public void setEntryTimeDate(String entryTimeDate) {
+        this.entryTimeDate=entryTimeDate;
     }
 
     @Override
